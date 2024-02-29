@@ -8,7 +8,7 @@
 70 C0 = 192: C1 = 249: C2 = 164: C3 = 176: C4 = 153: C5 = 146: C6 = 130: C7 = 248: C8 = 128: C9 = 152: BL = 255
 
 80 ' The 7 segment address 
-90 SG = 32768
+90 SG = 32832
 
 
 100 ' The message array length and message array to print
@@ -28,8 +28,18 @@
 1030 POKE SG, BL
 1040 DL = 150: GOSUB 10000
 1050 NEXT
+
+
 1060 DL = 400: GOSUB 10000
-1070 GOTO 1000
+1070 POKE SG, 254
+1080 DL = 400: GOSUB 10000
+1090 POKE SG, 191
+1100 DL = 400: GOSUB 10000
+1110 POKE SG, 247
+1120 DL = 400: GOSUB 10000
+1130 POKE SG, BL
+1140 DL = 150: GOSUB 10000
+1150 GOTO 1000
 
 
 9990 ' Simple delay subroutine

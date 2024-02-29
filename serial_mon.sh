@@ -1,0 +1,1 @@
+picocom -b 2400 -r -l /dev/tty.usbserial-A50285BI --send-cmd "ascii-xfr -s -c 6 -l 200" --receive-cmd "ascii-xfr -r"
